@@ -1,7 +1,6 @@
-/target/*
+target/
 .classpath
 .project
-.settings/*
+.settings/
 .vscode/
-/target/
-/test-output/*
+test-output/
