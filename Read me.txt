@@ -1,1 +1,2 @@
-# Run project with parallel mode with cucumber
+# Run project with parallel mode with a specific tag
+# mvn test -Dcucumber.filter.tags=@smoke
