@@ -12,5 +12,4 @@ public class BrowserInitSteps {
     public void browser_is_initialized() {
         driverManager.startDriver(BrowserName.CHROME); // Or read from config
     }
-
 }

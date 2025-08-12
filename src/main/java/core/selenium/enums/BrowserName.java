@@ -10,7 +10,6 @@ public enum BrowserName {
         public WebDriver createDriver()
         {
             return WebDriverManager.chromedriver().create();
-
         }
     },
     FIREFOX{
