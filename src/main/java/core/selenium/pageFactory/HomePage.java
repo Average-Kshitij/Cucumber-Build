@@ -39,6 +39,7 @@ public class HomePage extends BrowserInitilization{
 
         public void moveTheSlider(int offSet)
         {
+            highlightElement(we_priceSliderUpperBound);
             actionDragDrop(we_priceSliderUpperBound,offSet);
         }
 }

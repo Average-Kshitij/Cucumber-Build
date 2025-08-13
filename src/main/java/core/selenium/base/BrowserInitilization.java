@@ -3,6 +3,7 @@ package core.selenium.base;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -90,5 +91,23 @@ public class BrowserInitilization {
         .moveByOffset(-80, 0)
         .release()
         .perform();
+    }
+
+    public void highlightElement(WebElement element)
+    {
+        JavascriptExecutor js = (JavascriptExecutor) getDriverInstance();
+        String originalStyle = element.getAttribute("style");
+        js.executeScript("arguments[0].setAttribute('style', arguments[1]);", 
+        element, "border: 3px solid red; background-color: yellow;");
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // Restore original style
+        js.executeScript("arguments[0].setAttribute('style', arguments[1]);", 
+                element, originalStyle);
     }
 }
